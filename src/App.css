@@ -6,6 +6,7 @@
 }
 
 .app-mode {
+  position: fixed;
   cursor: pointer;
   width: 35px;
 }
@@ -16,7 +17,7 @@
 
 @media screen and (max-width: 500px) {
   .app-mode-section {
-    margin-inline-end: 20px;
+    margin-inline-end: 10px;
   }
   .app-mode {
     width: 20px;
