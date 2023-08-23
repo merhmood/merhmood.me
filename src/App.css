@@ -1,42 +1,98 @@
-#root {
-  max-width: 1280px;
+.app-mode-section {
+  display: flex;
+  justify-content: flex-end;
+  margin-inline-end: 65px;
+  padding-block-start: 18px;
+}
+
+.app-mode {
+  cursor: pointer;
+  width: 35px;
+}
+
+.app-mode img {
+  width: 100%;
+}
+
+@media screen and (max-width: 500px) {
+  .app-mode-section {
+    margin-inline-end: 20px;
+  }
+  .app-mode {
+    width: 20px;
+  }
+}
+
+.einstein {
+  width: 284px;
   margin: 0 auto;
-  padding: 2rem;
+}
+
+.einstein img {
+  border-radius: 200px;
+  width: 100%;
+}
+
+@media screen and (max-width: 500px) {
+  .einstein {
+    width: 150px;
+  }
+}
+
+.intro h2,
+.intro h4 {
   text-align: center;
+  margin-bottom: 7px;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
+.icons-section {
+  margin: 27px auto;
+  width: 222px;
 }
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
+.icons {
+  display: flex;
+  justify-content: space-between;
 }
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+.icons .icon {
+  width: 30px;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
+.icons .icon img {
+  width: 100%;
+}
+
+@media screen and (max-width: 500px) {
+  .icons-section {
+    width: 150px;
   }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
+  .icons .icon {
+    width: 22px;
   }
 }
 
-.card {
-  padding: 2em;
+.about {
+  margin: 0 auto;
+  max-width: 687px;
+  width: 100%;
 }
 
-.read-the-docs {
-  color: #888;
+.about-text {
+  margin-top: 27px;
+}
+
+.about button {
+  cursor: pointer;
+  border: none;
+  font-weight: 700;
+  margin: 15px 0;
+  width: 132px;
+  height: 39px;
+  border-radius: 35px;
+}
+
+@media screen and (max-width: 500px) {
+  .about button {
+    width: 112px;
+    height: 34px;
+  }
 }

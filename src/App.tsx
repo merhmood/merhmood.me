@@ -1,35 +1,95 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useEffect, useState } from 'react';
 
-function App() {
-  const [count, setCount] = useState(0)
+import moon from './assets/portfolio icons/moon.png';
+import sun from './assets/portfolio icons/sun.png';
+import einstein from './assets/cartoon-scientist-with-white-coat-that-says-science-it_902338-22176.jpg';
+
+import './App.css';
+
+type AppProps = {
+  icons: Array<{ light: string; dark: string; link: string }>;
+  about: Array<string>;
+};
+
+function App({ icons, about }: AppProps) {
+  const [appMode, setAppMode] = useState('light');
+  const [readMore, setReadMore] = useState(false);
+
+  const appModeHandler = () => {
+    // Toggles app Mode
+    setAppMode((state) => {
+      if (state === 'light') return 'dark';
+      else return 'light';
+    });
+  };
+
+  useEffect(() => {
+    const body = document.querySelector('body');
+    if (appMode === 'light') body?.setAttribute('class', 'light');
+    else body?.setAttribute('class', 'dark');
+  }, [appMode]);
 
   return (
     <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      <main>
+        <section className='app-mode-section'>
+          <div className='app-mode'>
+            <img
+              src={appMode == 'light' ? moon : sun}
+              alt='app-mode'
+              onClick={appModeHandler}
+            />
+          </div>
+        </section>
+        <section className='container'>
+          <div className='einstein'>
+            <img src={einstein} alt='einstein' />
+          </div>
+        </section>
+        <section className='container intro'>
+          <div className={appMode == 'light' ? 'light-text' : 'dark-text'}>
+            <h2>MAHMUD SUBERU</h2>
+            <h4>Software Engineer from Nigeria</h4>
+          </div>
+        </section>
+        <section className='icons-section'>
+          <div className='icons'>
+            {icons.map((icon, index) => {
+              return (
+                <a href={icon.link} target='_blank' key={index}>
+                  <img
+                    src={appMode === 'light' ? icon.light : icon.dark}
+                    alt='social-icon'
+                    className='icon'
+                  />
+                </a>
+              );
+            })}
+          </div>
+        </section>
+        <section className='container'>
+          <div className='about'>
+            <p>
+              Hi there! I am Mahmud a full-stack developer, DevOps Engineer and
+              Cloud enthusiast, currently freelancing.
+            </p>
+            <div>
+              {readMore &&
+                about.map((text) => <p className='about-text'>{text}</p>)}
+            </div>
+            <button
+              className={
+                appMode === 'light' ? 'dark dark-text' : 'light light-text'
+              }
+              onClick={() => setReadMore((state) => !state)}
+            >
+              {readMore ? 'Read Less' : 'Read More'}
+            </button>
+          </div>
+        </section>
+      </main>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
