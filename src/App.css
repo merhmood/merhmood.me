@@ -78,14 +78,14 @@
 }
 
 .about-text {
-  margin-top: 27px;
+  margin-top: 20px;
 }
 
 .about button {
   cursor: pointer;
   border: none;
   font-weight: 700;
-  margin: 15px 0;
+  margin: 20px 0;
   width: 132px;
   height: 39px;
   border-radius: 35px;

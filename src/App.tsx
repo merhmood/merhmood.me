@@ -15,12 +15,24 @@ type AppProps = {
 };
 
 function App({ icons, about }: AppProps) {
-  const [appMode, setAppMode] = useState(
-    localStorage.getItem('mode') || 'light'
-  );
+  const [appMode, setAppMode] = useState(setPreference);
   const [readMore, setReadMore] = useState(
     localStorage.getItem('readMore') || 'false'
   );
+
+  useEffect(() => {
+    // Persist read more state
+    window.localStorage.setItem('readMore', readMore);
+  }, [readMore]);
+
+  useEffect(() => {
+    // Sets body mode
+    const body = document.querySelector('body');
+    body?.setAttribute('class', appMode);
+
+    // Persist Theme
+    window.localStorage.setItem('mode', appMode);
+  }, [appMode]);
 
   const appModeHandler = () => {
     // Toggles app Mode
@@ -37,20 +49,6 @@ function App({ icons, about }: AppProps) {
       else return 'false';
     });
   };
-
-  useEffect(() => {
-    // Persist read more state
-    window.localStorage.setItem('readMore', readMore);
-  }, [readMore]);
-
-  useEffect(() => {
-    // Sets body mode
-    const body = document.querySelector('body');
-    body?.setAttribute('class', appMode);
-
-    // Persist Theme
-    window.localStorage.setItem('mode', appMode);
-  }, [appMode]);
 
   return (
     <>
@@ -78,14 +76,23 @@ function App({ icons, about }: AppProps) {
             <div>
               {readMore === 'true' &&
                 about.map((text, index) => (
-                  <p className='about-text' key={index}>
+                  <p
+                    className={
+                      appMode === 'light'
+                        ? 'about-text light-text'
+                        : 'about-text dark-text'
+                    }
+                    key={index}
+                  >
                     {text}
                   </p>
                 ))}
             </div>
             <button
               className={
-                appMode === 'light' ? `dark dark-text` : `light light-text`
+                appMode === 'light'
+                  ? 'dark-button dark-text'
+                  : 'light light-text'
               }
               onClick={readMoreHandler}
             >
@@ -99,3 +106,15 @@ function App({ icons, about }: AppProps) {
 }
 
 export default App;
+
+const setPreference = () => {
+  const storageItem = localStorage.getItem('mode');
+  // Set mode to stored app mode
+  if (storageItem) return storageItem;
+  else {
+    // Set mode to users default preference
+    return window.matchMedia('(prefers-color-scheme: dark)').matches
+      ? 'dark'
+      : 'light';
+  }
+};

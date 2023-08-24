@@ -48,7 +48,6 @@ h4 {
 p,
 button {
   font-family: var(--primary-font-family);
-  color: #7a7a7a;
 }
 
 p {
@@ -81,13 +80,15 @@ button {
 }
 
 .dark {
-  background-color: black;
+  background-color: #1f2022;
   color: white;
   height: fit-content;
 }
-
+.dark-button {
+  background-color: #0f0f0f;
+}
 .light-text {
-  color: black;
+  color: #0f0f0f;
 }
 
 .dark-text {
