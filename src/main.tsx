@@ -2,11 +2,13 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './App.tsx';
 
+// Dark icons
 import instaLight from './assets/portfolio icons/instagram.png';
 import twitterLight from './assets/portfolio icons/twitter.png';
 import githubLight from './assets/portfolio icons/github (1).png';
 import linkedInLight from './assets/portfolio icons/linkedin.png';
 
+// Light icons
 import instaDark from './assets/portfolio icons/instagram (2).png';
 import twitterDark from './assets/portfolio icons/twitter (1).png';
 import githubDark from './assets/portfolio icons/github (2).png';
