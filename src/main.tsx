@@ -32,7 +32,11 @@ const icons = [
     dark: instaDark,
     link: 'https://www.instagram.com/merh_mood',
   },
-  { light: linkedInLight, dark: linkedInDark, link: '#' },
+  {
+    light: linkedInLight,
+    dark: linkedInDark,
+    link: 'https://www.linkedin.com/in/mahmud-suberu-684020235/',
+  },
 ];
 
 const about = [
