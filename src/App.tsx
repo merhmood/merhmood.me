@@ -71,7 +71,7 @@ function App({ icons, about }: AppProps) {
           <div className='about'>
             <p>
               Hi there! I am Mahmud a full-stack developer, DevOps Engineer and
-              Cloud enthusiast, currently freelancing.
+              Cloud enthusiast, currently working full-time at Omnihale.
             </p>
             <div>
               {readMore === 'true' &&

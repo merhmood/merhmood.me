@@ -4,7 +4,7 @@ function Intro({ appMode }: IntroProps) {
     <section className='container intro'>
       <div className={appMode == 'light' ? 'light-text' : 'dark-text'}>
         <h2>MAHMUD SUBERU</h2>
-        <h4>Software Engineer from Nigeria</h4>
+        <h4>Co-founder and Ceo of Omnihale</h4>
       </div>
     </section>
   );

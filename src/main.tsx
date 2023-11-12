@@ -36,7 +36,7 @@ const icons = [
 ];
 
 const about = [
-  "Interned at the minority programmers association, and I'm currently working with OES as a part-time full-stack developer. I am always making contributions to my projects on GitHub, contributing to open source and, when i am not doing those, I am extending my horizons by reading tech books, tech articles, attending online conferences, etc.",
+  'Interned at the minority programmers association and worked at distributed as a software engineer. I am always making contributions to my projects on GitHub, contributing to open source and, when i am not doing those, I am extending my horizons by reading tech books, tech articles, attending online conferences, etc.',
   'Currently focusing on DevOps and Cloud Architecture. Also I am working towards attaining my certifications from Azure and Aws. Sponsorship are welcomed!',
   'Outside of programming,  I play chess, basketball and sometimes video games. Currently aiming to wander the world to see what software development is like in other countries.',
 ];
