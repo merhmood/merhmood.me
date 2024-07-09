@@ -41,8 +41,8 @@ const icons = [
 
 const about = [
   "Worked at the minority programmers association and currently working at Distributed as a Software engineer. I am always making contributions to my projects on GitHub, contributing to open source and, when i am not doing those, I am extending my horizons by reading tech books, tech articles, attending online conferences, etc.",
-  "Currently geared towards Manchine Learning. Also I am working towards attaining my DevOps certifications from Azure and Aws. Sponsorship are welcomed!",
-  "Outside of programming,  I play chess, basketball and sometimes video games. Currently aiming to wander the world to see what software development is like in other countries.",
+  "Currently geared towards Manchine Learning. Also I am working towards attaining my DevOps certifications from Azure and Aws, Sponsorships are welcomed!",
+  "Outside of programming,  I play chess, basketball and sometimes video games.",
 ];
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
