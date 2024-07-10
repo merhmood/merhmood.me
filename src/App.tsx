@@ -98,6 +98,21 @@ function App({ icons, about }: AppProps) {
             >
               {readMore === "true" ? "Read Less" : "Read More"}
             </button>
+            {/* Download cv */}
+            <a
+              href={`/Mahmud Suberu_Software Engineer_resume.pdf`}
+              download={true}
+            >
+              <button
+                className={
+                  appMode === "light"
+                    ? "dark-button dark-text"
+                    : "light light-text"
+                }
+              >
+                Download CV
+              </button>
+            </a>
           </div>
         </section>
       </main>
