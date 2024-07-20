@@ -99,10 +99,7 @@ function App({ icons, about }: AppProps) {
               {readMore === "true" ? "Read Less" : "Read More"}
             </button>
             {/* Download cv */}
-            <a
-              href={`/Mahmud Suberu_Software Engineer_resume.pdf`}
-              download={true}
-            >
+            <a href={`/Mahmud_Suberu_RESUME.pdf`} download={true}>
               <button
                 className={
                   appMode === "light"
